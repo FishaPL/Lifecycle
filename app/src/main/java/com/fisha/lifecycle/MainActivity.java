@@ -13,7 +13,7 @@ import com.fisha.lifecycle.databinding.ActivityMainBinding;
 // https://developer.android.com/guide/components/activities/activity-lifecycle
 public class MainActivity extends AppCompatActivity {
 
-    private static  final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = MainActivity.class.getSimpleName();
     private ActivityMainBinding binding;
 
     @Override
@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        getLifecycle().addObserver(new MainActivityObserver());
+
 
         String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
         printMethodName(methodName);

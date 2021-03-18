@@ -98,23 +98,23 @@ public class BlankFragment extends Fragment
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null;
         String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
         printMethodName(methodName);
+        binding = null;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
-        printMethodName(methodName);
+        Log.i(TAG, "[] " + methodName);
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
-        printMethodName(methodName);
+        Log.i(TAG, "[] " + methodName);
     }
 
     private void printMethodName(String methodName)
